@@ -1,0 +1,184 @@
+/* 基本的なスタイルリセット */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; /* リストの点を消す */
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #FCFAFF; /* 全体の背景色を非常に薄いラベンダーに */
+}
+
+/* ヘッダー */
+header {
+    background-color: #E6E6FA; /* 薄いラベンダー色 */
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: #4B0082; /* 濃い紫色でアクセント */
+}
+
+.red-e {
+    color: red;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li a {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #4B0082;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    background-color: #D8BFD8; /* 少し濃いラベンダー */
+    border-radius: 5px;
+}
+
+/* ヒーローセクション */
+#hero {
+    height: 60vh; /* 画面の高さの60% */
+    background-image: url("images/hero-image.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+}
+
+/* コンテンツセクションの共通スタイル */
+.container {
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.container h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #4B0082;
+}
+
+/* メニューセクション */
+#menu {
+    display: flex;
+    flex-wrap: wrap; /* 折り返しを許可 */
+    justify-content: center; /* 中央揃え */
+    gap: 2rem; /* アイテム間の隙間 */
+}
+
+.menu-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 1.5rem;
+    width: 300px; /* 幅を固定 */
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* スタッフセクション */
+.staff-member {
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.staff-member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* 円形にする */
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+/* アクセスセクション */
+#access {
+    text-align: center;
+}
+
+#map img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* お客様の声セクション */
+#voice {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.voice-item {
+    background: #E6E6FA;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 300px;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #E6E6FA;
+    color: #4B0082;
+    /* position: fixed; を削除して、コンテンツの下に表示されるようにする */
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    header nav ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    #menu, #voice {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -49,7 +49,7 @@ header nav ul li a:hover {
 /* ヒーローセクション */
 #hero {
     height: 60vh; /* 画面の高さの60% */
-    background-image: url("images/hero-image.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/Zenヒーロー.jpg"); /* 半透明の黒いフィルターを追加 */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -58,7 +58,7 @@ header nav ul li a:hover {
     align-items: center;
     text-align: center;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6); /* 影を調整 */
 }
 
 #hero h2 {
@@ -126,15 +126,53 @@ header nav ul li a:hover {
 
 /* アクセスセクション */
 #access {
-    text-align: center;
+    background-color: #fff; /* 背景を白にして他のセクションと区切る */
+}
+
+.access-content {
+    display: flex;
+    flex-wrap: wrap; /* スマホで縦並びにするため */
+    gap: 2rem; /* 情報と地図の間の隙間 */
+    align-items: flex-start; /* 上端揃え */
+}
+
+.access-details {
+    flex: 1; /* 横並びの際の幅を自動調整 */
+    min-width: 300px; /* 最小幅を指定 */
+}
+
+#access h3 {
+    font-size: 1.4rem;
+    color: #4B0082;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #E6E6FA;
+    padding-bottom: 0.5rem;
+}
+
+.hours-table {
+    width: 100%;
+    border-collapse: collapse; /* 線の重なりをなくす */
+    margin-top: 1rem;
+}
+
+.hours-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #E6E6FA;
+}
+
+.hours-table tr:last-child td {
+    border-bottom: none; /* 最後の行の下線を消す */
+}
+
+#map {
+    flex: 1.5; /* 地図の幅を少し広めに */
+    min-width: 300px;
 }
 
 #map img {
     width: 100%;
-    max-width: 800px;
     height: auto;
     border-radius: 8px;
-    margin-top: 1rem;
 }
 
 /* お客様の声セクション */
@@ -145,11 +183,40 @@ header nav ul li a:hover {
     flex-wrap: wrap;
 }
 
-.voice-item {
-    background: #E6E6FA;
-    padding: 1.5rem;
-    border-radius: 8px;
-    width: 300px;
+
+
+/* 予約セクション */
+#reservation {
+    text-align: center;
+    background-color: #FCFAFF; /* 全体の背景色と合わせて統一感を出す */
+    padding: 5rem 2rem; /* 余白を広くとる */
+    border-top: 1px solid #E6E6FA; /* 上のセクションとの区切り線 */
+}
+
+#reservation p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto 2rem auto; /* 中央揃えと下の余白 */
+}
+
+.reservation-button {
+    display: inline-block;
+    background-image: linear-gradient(45deg, #8A2BE2 0%, #4B0082 100%); /* 紫のグラデーション */
+    color: white;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px; /* 角を丸くしてモダンに */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 影をつけて立体感を出す */
+    margin-top: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* アニメーション効果 */
+}
+
+.reservation-button:hover {
+    transform: translateY(-3px); /* 少し浮き上がる動き */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* 影を濃くする */
 }
 
 /* フッター */

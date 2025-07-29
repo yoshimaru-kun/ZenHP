@@ -85,7 +85,7 @@ header nav ul li a:hover {
 }
 
 /* メニューセクション */
-#menu {
+.menu-grid {
     display: flex;
     flex-wrap: wrap; /* 折り返しを許可 */
     justify-content: center; /* 中央揃え */

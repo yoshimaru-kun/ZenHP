@@ -244,8 +244,20 @@ footer {
         margin-bottom: 0.5rem;
     }
 
-    #menu, #voice {
-        flex-direction: column;
-        align-items: center;
+    #hero h2 {
+        font-size: 2rem; /* スマホ用にフォントサイズを調整 */
+    }
+
+    .container {
+        padding: 3rem 1rem; /* スマホ用に余白を調整 */
+    }
+
+    .menu-item {
+        width: 90%; /* 幅を画面サイズに合わせる */
+        max-width: 350px; /* 広がりすぎないように最大幅を指定 */
+    }
+
+    .access-content {
+        flex-direction: column; /* アクセス情報も縦並びにする */
     }
 }

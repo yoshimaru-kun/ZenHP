@@ -1,4 +1,8 @@
 /* 基本的なスタイルリセット */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body, h1, h2, p, ul {
     margin: 0;
     padding: 0;
@@ -138,7 +142,6 @@ header nav ul li a:hover {
 
 .access-details {
     flex: 1; /* 横並びの際の幅を自動調整 */
-    min-width: 300px; /* 最小幅を指定 */
 }
 
 #access h3 {
@@ -166,7 +169,6 @@ header nav ul li a:hover {
 
 #map {
     flex: 1.5; /* 地図の幅を少し広めに */
-    min-width: 300px;
 }
 
 #map img {

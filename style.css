@@ -52,17 +52,63 @@ header nav ul li a:hover {
 
 /* ヒーローセクション */
 #hero {
-    height: 60vh; /* 画面の高さの60% */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/Zenヒーロー.jpg"); /* 半透明の黒いフィルターを追加 */
-    background-size: cover;
-    background-position: center;
+    height: 75vh;
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.6); /* 影を調整 */
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.slideshow-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 3;
+}
+
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
 
 #hero h2 {
@@ -101,23 +147,32 @@ header nav ul li a:hover {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
-    padding: 1.5rem;
-    width: 300px; /* 幅を固定 */
+    width: 600px; /* 幅を固定 */
 }
 
 .menu-item img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     border-radius: 8px;
-    margin-bottom: 1rem;
 }
 
 /* スタッフセクション */
 .staff-member {
     text-align: center;
-    max-width: 400px;
+    max-width: 800px;
     margin: 0 auto;
+}
+
+.staff-member p,
+.staff-member ul {
+    text-align: left;
+}
+
+.staff-member ul {
+    margin-top: 1rem;
+    padding-left: 0; /* リストのインデントをリセット */
+    list-style-position: inside; /* マーカーを内側に配置 */
 }
 
 .staff-member img {
@@ -134,14 +189,14 @@ header nav ul li a:hover {
 }
 
 .access-content {
-    display: flex;
-    flex-wrap: wrap; /* スマホで縦並びにするため */
+    display: grid;
+    grid-template-columns: 1fr 2.5fr; /* 情報エリアより地図を2.5倍広く */
     gap: 2rem; /* 情報と地図の間の隙間 */
-    align-items: flex-start; /* 上端揃え */
+    align-items: start; /* 上端揃え */
 }
 
 .access-details {
-    flex: 1; /* 横並びの際の幅を自動調整 */
+    text-align: left;
 }
 
 #access h3 {
@@ -152,30 +207,23 @@ header nav ul li a:hover {
     padding-bottom: 0.5rem;
 }
 
-.hours-table {
-    width: 100%;
-    border-collapse: collapse; /* 線の重なりをなくす */
-    margin-top: 1rem;
+.business-days {
+    list-style: none; /* リストの点を消す */
+    padding-left: 0; /* 左側の余白をリセット */
 }
 
-.hours-table td {
-    padding: 0.75rem;
-    border-bottom: 1px solid #E6E6FA;
-}
 
-.hours-table tr:last-child td {
-    border-bottom: none; /* 最後の行の下線を消す */
-}
 
 #map {
-    flex: 1.5; /* 地図の幅を少し広めに */
 }
 
-#map img {
+#map iframe {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    height: 500px; /* 地図の高さを設定 */
+    border: 0;
 }
+
+
 
 /* お客様の声セクション */
 #voice {
@@ -229,6 +277,71 @@ footer {
     color: #4B0082;
     /* position: fixed; を削除して、コンテンツの下に表示されるようにする */
 }
+
+/* Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 /* レスポンシブ対応 */
 @media (max-width: 768px) {

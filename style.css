@@ -363,6 +363,10 @@ footer {
         font-size: 2rem; /* スマホ用にフォントサイズを調整 */
     }
 
+    #hero {
+        height: 50vh; /* モバイルでは高さを画面の50%に調整 */
+    }
+
     .container {
         padding: 3rem 1rem; /* スマホ用に余白を調整 */
     }
@@ -374,5 +378,9 @@ footer {
 
     .access-content {
         flex-direction: column; /* アクセス情報も縦並びにする */
+    }
+
+    .slide img {
+        object-position: center; /* 画像の中心を基準に表示 */
     }
 }

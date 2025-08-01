@@ -225,13 +225,7 @@ header nav ul li a:hover {
 
 
 
-/* お客様の声セクション */
-#voice {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
+
 
 
 
